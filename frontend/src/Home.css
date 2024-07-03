@@ -1,0 +1,94 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.input-box {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.markdown-container {
+  white-space: pre-wrap;
+  text-align: justify;
+  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit-button,
+.start-course-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit-button:hover,
+.start-course-button:hover {
+  background-color: #0056b3;
+}
+    /* Home.css */
+.main-container {
+  padding: 20px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-button, .start-course-button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.markdown-container {
+  margin: 20px 0;
+}
+
+/* CoursePage.css */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-container {
+  display: flex;
+  gap: 5px;
+}
+
+.page-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
