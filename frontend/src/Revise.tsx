@@ -102,8 +102,8 @@ function extractText(event: React.ChangeEvent<HTMLInputElement>) {
   }
   const file = event.target.files[0] ;
   pdfToText(file)
-    .then((text) => setText(text))
-    .catch((error) => console.error("Failed to extract text from pdf", error));
+    .then((text: string) => setText(text))
+    .catch((error: Error) => console.error("Failed to extract text from pdf", error));
 }
   return (
     <>
