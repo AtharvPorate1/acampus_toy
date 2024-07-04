@@ -14,7 +14,7 @@ const Chatbot = ({ context }: { context: string }) => {
     setMessages((prevMessages) => [...prevMessages, input]);
     setIsLoading(true); // Set loading state to true
     const question = `context is ${context} and question is ${input}, please answer this question in 2 - 3 sentences.`;
-    const response = await fetch('http://localhost:5001/api/reviseqna', {
+    const response = await fetch('https://acampus-toy-1.onrender.com/api/reviseqna', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

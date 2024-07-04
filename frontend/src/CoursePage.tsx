@@ -19,7 +19,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
   useEffect(() => {
     const fetchCourseContent = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/coursecontent', {
+        const response = await fetch('https://acampus-toy-1.onrender.com/api/coursecontent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

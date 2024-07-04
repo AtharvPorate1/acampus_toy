@@ -8,7 +8,7 @@ const CoursePage: React.FC = () => {
   useEffect(() => {
     const fetchChapterContent = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/course/${userEnteredTopic}/${chapterName}`);
+        const response = await fetch(`https://acampus-toy-1.onrender.com/api/course/${userEnteredTopic}/${chapterName}`);
         const data = await response.text();
         setChapterContent(data);
       } catch (error) {
