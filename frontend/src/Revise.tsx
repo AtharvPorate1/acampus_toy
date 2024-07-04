@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import pdfToText from "react-pdftotext";
 import "./Revise.css";
 import Flashcards from "./components/Flashcard";
@@ -78,7 +78,7 @@ const Chatbot = ({ context }: { context: string }) => {
 
 const Revise = () => {
   const [text, setText] = useState<string>("");
-  const [method, setMethod] = useState<number>(0);
+  
   const [activeChatbot, setActiveChatbot] = useState<boolean>(false);
   const [activeFlashcards, setActiveFlashcards] = useState<boolean>(false);
 

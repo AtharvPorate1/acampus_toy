@@ -35,7 +35,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
         }
 
         let result = '';
-        let chunks: string[] = [];
+        const chunks: string[] = [];
         let shouldUpdate = true;
 
         const readChunks = async () => {
