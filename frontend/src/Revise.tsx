@@ -31,7 +31,7 @@ const Chatbot = ({ context }: { context: string }) => {
     }
 
     let result = '';
-    while (true) {
+    for (;;) {
       const { value, done } = await reader.read();
       if (done) break;
       console.log('Received: ', value);
@@ -96,8 +96,11 @@ const Revise = () => {
     
 
   
-function extractText(event) {
-  const file = event.target.files[0];
+function extractText(event: React.ChangeEvent<HTMLInputElement>) {
+  if (!event.target.files) {
+    return;
+  }
+  const file = event.target.files[0] ;
   pdfToText(file)
     .then((text) => setText(text))
     .catch((error) => console.error("Failed to extract text from pdf", error));

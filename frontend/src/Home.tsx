@@ -43,7 +43,7 @@ const Home: React.FC = () => {
     }
 
     let result = '';
-    while (true) {
+    for (;;) {
       const { value, done } = await reader.read();
       if (done) break;
       console.log('Received: ', value);
