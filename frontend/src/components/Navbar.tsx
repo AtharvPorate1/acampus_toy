@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <NavLink to="/courseroom" activeClassName="active" className="nav-link">
-        Home
+        Learn
       </NavLink>
       <NavLink to="/reviseroom" activeClassName="active" className="nav-link">
         Revise
