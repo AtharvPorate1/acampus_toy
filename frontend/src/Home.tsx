@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   const [isComplete, setIsComplete] = useState<boolean>(false);
 
   const handleClick = async () => {
-    const response = await fetch('https://acampus-toy-1.onrender.com/api/', {
+    const response = await fetch('https://acampus-toy-1.onrender.com/api/completion/completion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
