@@ -1,14 +1,25 @@
 /* App.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .card-container {
   display: flex;
   justify-content: space-around;
   width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }

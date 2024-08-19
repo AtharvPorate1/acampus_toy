@@ -1,3 +1,4 @@
+/* Flashcards.css */
 .flashcards-container {
   display: flex;
   flex-direction: column;
@@ -7,7 +8,7 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #f5f5f5; /* Lighter beige for background */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -24,7 +25,7 @@
   width: 70%;
   padding: 10px;
   font-size: 1rem;
-  border: 2px solid #ddd;
+  border: 2px solid #e0e0e0; /* Light gray border */
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
@@ -33,7 +34,7 @@
 .input-section button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #ff6347;
+  background-color: #e04f5f; /* Red background */
   color: white;
   border: none;
   border-radius: 6px;
@@ -43,7 +44,7 @@
 }
 
 .input-section button:hover {
-  background-color: #ff7f60;
+  background-color: #d9434f; /* Slightly darker red on hover */
 }
 
 .flashcard {
@@ -52,12 +53,12 @@
   justify-content: center;
   width: 100%;
   height: 200px;
-  border: 2px solid #333;
+  border: 2px solid #e04f5f; /* Red border to match the theme */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1.5rem;
   text-align: center;
-  background-color: #fff;
+  background-color: #fff; /* White background */
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -72,10 +73,11 @@
   cursor: pointer;
   user-select: none;
   transition: color 0.3s;
+  color: #e04f5f; /* Red color for navigation buttons */
 }
 
 .nav-button:hover {
-  color: #ff6347;
+  color: #d9434f; /* Slightly darker red on hover */
 }
 
 .nav-button.left {

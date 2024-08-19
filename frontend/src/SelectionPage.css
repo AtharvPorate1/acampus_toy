@@ -1,10 +1,11 @@
 /* SelectionPage.css */
 
 .selection-container {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #ffffff; /* Consistent background color */
   }
   
   .header {
@@ -53,12 +54,12 @@
   }
   
   .room-button {
-    background-color: #f0f0f0;
+    background-color: #f7f7f7; /* Lighter background for consistency */
     padding: 15px 30px;
-    border-radius: 10px;
+    border-radius: 8px; /* Slightly smaller radius for a subtle look */
     text-decoration: none;
     color: #000;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 16px;
     text-align: center;
     flex: 1;
@@ -66,7 +67,7 @@
   }
   
   .room-button:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Maintains the theme with consistent hover effect */
   }
   
   .course-section {
@@ -84,11 +85,12 @@
   }
   
   .course-card {
-    background-color: #f0f0f0;
+    background-color: #f7f7f7; /* Consistent background color */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px; /* Slightly smaller radius */
     text-align: center;
     flex: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
   }
   
   .course-card img {
@@ -127,3 +129,4 @@
       flex-direction: column;
     }
   }
+  

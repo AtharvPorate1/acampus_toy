@@ -1,30 +1,32 @@
 /* Card.css */
 .card {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 16px;
-    width: 200px;
-    margin: 16px;
-    text-align: center;
-  }
-  
-  .card h2 {
-    font-size: 1.25rem;
-    margin-bottom: 8px;
-  }
-  
-  .card p {
-    color: #555;
-    margin-bottom: 16px;
-  }
-  
-  .card a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .card a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #fff; /* White background for a clean look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+  border-radius: 8px;
+  padding: 16px;
+  width: 200px;
+  margin: 16px;
+  text-align: center;
+  border: 1px solid #e04f5f; /* Red border to match the theme */
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #e04f5f; /* Red color for headings */
+}
+
+.card p {
+  color: #666; /* Darker gray for text for better readability */
+  margin-bottom: 16px;
+}
+
+.card a {
+  color: #e04f5f; /* Red color for links */
+  text-decoration: none;
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.card a:hover {
+  text-decoration: underline; /* Underline on hover for interactivity */
+}

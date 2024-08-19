@@ -143,9 +143,7 @@ const Home: React.FC = () => {
           </div>
         )}
       </main>
-      <footer className="footer">
-        <img src="/cat-icon.png" alt="Cat Icon" className="cat-icon" />
-      </footer>
+      
     </div>
   );
 };

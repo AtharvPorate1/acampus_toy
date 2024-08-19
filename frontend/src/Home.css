@@ -1,10 +1,20 @@
 /* Home.css */
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 .home-container {
-  font-family: Arial, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -16,18 +26,22 @@
 
 .header h1 {
   font-size: 24px;
-  font-weight: bold;
-  color: #000;
+  color: #333;
 }
 
 .premium-button {
-  background-color: #000;
+  background-color: #e04f5f; /* Red background */
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.premium-button:hover {
+  background-color: #ff7f7f; /* Lighter red on hover */
 }
 
 .user-icon {
@@ -43,7 +57,7 @@
 
 .main-content h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  color: #333;
 }
 
 .course-input {
@@ -56,13 +70,13 @@
   flex-grow: 1;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .submit-button {
-  background-color: #e6f7ff;
-  color: #000;
+  background-color: #4CAF50; /* Green background */
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -71,14 +85,15 @@
 }
 
 .syllabus-container {
-  background-color: #f0f0f0;
+  background-color: #f8f9fa; /* Light beige background */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 30px;
 }
 
 .syllabus-container h3 {
   font-size: 20px;
+  color: #333;
   margin-bottom: 15px;
 }
 
@@ -87,7 +102,7 @@
 }
 
 .start-course-button {
-  background-color: #4CAF50;
+  background-color: #007bff; /* Blue background */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -104,11 +119,12 @@
 .complete-message p {
   font-size: 24px;
   font-weight: bold;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .complete-message button {
-  background-color: #4CAF50;
+  background-color: #007bff; /* Blue background */
   color: white;
   padding: 10px 20px;
   border: none;

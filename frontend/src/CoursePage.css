@@ -1,99 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* Home.css */
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.main-container {
-  max-width: 800px;
-  margin: 40px auto;
+.home-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f6f1; /* Light beige background for a soft look */
 }
 
-.markdown-container {
-  background-color: #f9f9f9;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.markdown-container h1, 
-.markdown-container h2, 
-.markdown-container h3 {
-  color: #333;
-}
-
-.markdown-container p {
-  margin-bottom: 15px;
-}
-
-.navigation-buttons {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 28px; /* Slightly larger for emphasis */
+  font-weight: bold;
+  color: #333; /* Dark beige for contrast */
+}
+
+.premium-button {
+  background-color: #e04f5f; /* Red background for prominence */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.premium-button:hover {
+  background-color: #c94343; /* Darker red on hover */
+}
+
+.user-icon {
+  font-size: 24px;
+  background-color: #ffebeb; /* Soft pink for a cute touch */
+  color: #e04f5f; /* Red color for user icon */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #e04f5f; /* Red color to match the theme */
+}
+
+.course-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e04f5f; /* Red border for input box */
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #e04f5f; /* Red background */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #c94343; /* Darker red on hover */
+}
+
+.syllabus-container {
+  background-color: #fff; /* White background for content area */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a modern touch */
+  margin-bottom: 30px;
+}
+
+.syllabus-container h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #e04f5f; /* Red color for headings */
+}
+
+.markdown-container {
+  margin-bottom: 20px;
+}
+
+.start-course-button {
+  background-color: #e04f5f; /* Red background */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.start-course-button:hover {
+  background-color: #c94343; /* Darker red on hover */
+}
+
+.complete-message {
+  text-align: center;
   margin-top: 30px;
 }
 
-.submit-button, .start-course-button {
-  background-color: #ff595e;
+.complete-message p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e04f5f; /* Red color for completion message */
+  margin-bottom: 20px;
+}
+
+.complete-message button {
+  background-color: #e04f5f; /* Red background */
   color: #fff;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
 }
 
-.submit-button:hover, .start-course-button:hover {
-  background-color: #ff474a;
+.complete-message button:hover {
+  background-color: #c94343; /* Darker red on hover */
 }
 
-.submit-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+.footer {
+  text-align: right;
+  margin-top: 30px;
 }
 
-.pagination-container {
-  display: flex;
-  gap: 8px;
-}
-
-.page-button {
-  background-color: #e0e0e0;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-.page-button.active {
-  background-color: #ff595e;
-  color: white;
-}
-
-.page-button:hover {
-  background-color: #cccccc;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .navigation-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .pagination-container {
-    order: -1;
-    margin-bottom: 15px;
-  }
+.cat-icon {
+  width: 50px;
+  height: 50px;
 }

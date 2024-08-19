@@ -1,10 +1,11 @@
+/* Test.css */
 .test-container {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
+    background-color: #f7f7f7; /* Lighter beige background */
+    border-radius: 12px; /* Slightly rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -19,17 +20,24 @@
     padding: 10px;
     width: 80%;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly larger border radius */
     border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .input-section button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #e04f5f; /* Red background */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .input-section button:hover {
+    background-color: #ff7f7f; /* Lighter red on hover */
   }
   
   .questions-section {
@@ -47,6 +55,7 @@
   .question {
     font-weight: bold;
     margin-bottom: 10px;
+    color: #333; /* Darker text for readability */
   }
   
   .options {
@@ -61,18 +70,25 @@
   .submit-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #28a745; /* Green background */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #5cb85c; /* Lighter green on hover */
   }
   
   .result-section {
     margin-top: 20px;
     padding: 20px;
-    background-color: #e9ecef;
+    background-color: #f0f0f0; /* Light gray background */
     border-radius: 10px;
     text-align: center;
+    border: 1px solid #ccc; /* Light border */
   }
   
