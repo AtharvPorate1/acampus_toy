@@ -1,71 +1,115 @@
-/* Chatbot.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
 
 .chatbot-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chatbot-messages {
+  max-height: 350px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.message {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.message-input button {
+  padding: 12px 18px;
+  background-color: #ff595e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.message-input button:hover {
+  background-color: #ff474a;
+}
+
+.top-button {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.top-button > button {
+  padding: 12px 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.top-button > button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 15px;
   }
-  
-  .chatbot-messages {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-  }
-  
-  .message {
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
-  }
-  
-  .message p {
-    margin: 0;
-  }
-  
+
   .message-input {
-    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
-  
-  .message-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .message-input button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-  }
-  
-  .message-input button:hover {
-    background-color: #0056b3;
-  }
+
   .top-button {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 10px;
   }
-  .top-button> button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color:white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+}

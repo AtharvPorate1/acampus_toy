@@ -1,9 +1,7 @@
-import {  useState } from "react";
+import { useState } from "react";
 import pdfToText from "react-pdftotext";
 import "./Revise.css";
 import Flashcards from "./components/Flashcard";
-
-
 
 const Chatbot = ({ context }: { context: string }) => {
   const [messages, setMessages] = useState<string[]>([]);
@@ -11,8 +9,12 @@ const Chatbot = ({ context }: { context: string }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleClick = async () => {
+    if (input.trim() === '') return;
+
     setMessages((prevMessages) => [...prevMessages, input]);
-    setIsLoading(true); // Set loading state to true
+    setInput('');
+    setIsLoading(true);
+
     const question = `context is ${context} and question is ${input}, please answer this question in 2 - 3 sentences.`;
     const response = await fetch('https://acampus-toy-1.onrender.com/api/reviseqna', {
       method: 'POST',
@@ -26,7 +28,7 @@ const Chatbot = ({ context }: { context: string }) => {
 
     if (!reader) {
       console.error('Failed to get reader from response');
-      setIsLoading(false); // Reset loading state
+      setIsLoading(false);
       return;
     }
 
@@ -34,12 +36,11 @@ const Chatbot = ({ context }: { context: string }) => {
     for (;;) {
       const { value, done } = await reader.read();
       if (done) break;
-      console.log('Received: ', value);
       result += value;
     }
 
     setMessages((prevMessages) => [...prevMessages, result]);
-    setIsLoading(false); // Reset loading state
+    setIsLoading(false);
   };
 
   return (
@@ -51,7 +52,7 @@ const Chatbot = ({ context }: { context: string }) => {
           </div>
         ))}
         {isLoading && (
-          <div className="message">
+          <div className="message loading-message">
             <p>Loading...</p>
           </div>
         )}
@@ -69,16 +70,8 @@ const Chatbot = ({ context }: { context: string }) => {
   );
 };
 
-
-
-
-
-
-
-
 const Revise = () => {
   const [text, setText] = useState<string>("");
-  
   const [activeChatbot, setActiveChatbot] = useState<boolean>(false);
   const [activeFlashcards, setActiveFlashcards] = useState<boolean>(false);
 
@@ -92,44 +85,35 @@ const Revise = () => {
     setActiveFlashcards(true);
   };
 
-  
-    
+  const extractText = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) return;
 
-  
-function extractText(event: React.ChangeEvent<HTMLInputElement>) {
-  if (!event.target.files) {
-    return;
-  }
-  const file = event.target.files[0] ;
-  pdfToText(file)
-    .then((text: string) => setText(text))
-    .catch((error: Error) => console.error("Failed to extract text from pdf", error));
-}
+    const file = event.target.files[0];
+    pdfToText(file)
+      .then((text: string) => setText(text))
+      .catch((error: Error) => console.error("Failed to extract text from PDF", error));
+  };
+
   return (
-    <>
     <div>
       <div className="top-button">
-        <button onClick={handleChatbot} className="" >Chatbot</button>
+        <button onClick={handleChatbot}>Chatbot</button>
         <button onClick={handleFlashcards}>Flashcards</button>
       </div>
-      {activeChatbot && <div className="chatbot-container">
-        <input type="file" accept="application/pdf" onChange={extractText} />
-        {/* <div>
-          {text}
-        </div> */}
-        <div>
-          <Chatbot context={text}/>
+      {activeChatbot && (
+        <div className="chatbot-container">
+          <input type="file" accept="application/pdf" onChange={extractText} />
+          <Chatbot context={text} />
         </div>
-      </div>}
-      <div>
-        {activeFlashcards && <div className="chatbot-container">
-          Coming Soon...
-          <Flashcards cards={text.split("\n\n")}/>
-        </div>}
-      </div>
+      )}
+      {activeFlashcards && (
+        <div className="chatbot-container">
+          
+          <Flashcards  />
+        </div>
+      )}
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Revise
+export default Revise;
