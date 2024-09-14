@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import './CoursePage.css'; // Import the CSS file
+import './CoursePage.css';
 
 interface CoursePageProps {
   chapters: string[];
@@ -8,7 +8,7 @@ interface CoursePageProps {
   onPrev: () => void;
   onNext: () => void;
   onComplete: () => void;
-  onChapterSelect: (chapter: number) => void; // New prop for handling chapter selection
+  onChapterSelect: (chapter: number) => void;
 }
 
 const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPrev, onNext, onComplete, onChapterSelect }) => {
@@ -16,9 +16,13 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
   const isLastChapter = currentChapter === chapters.length - 1;
   const query = chapters[currentChapter];
 
+  console.log('Component rendered. Current chapter:', currentChapter, 'Query:', query);
+
   useEffect(() => {
+    console.log('useEffect triggered. Fetching course content...');
     const fetchCourseContent = async () => {
       try {
+        console.log('Sending POST request to fetch course content');
         const response = await fetch('https://acampus-toy-1.onrender.com/api/coursecontent', {
           method: 'POST',
           headers: {
@@ -26,6 +30,8 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
           },
           body: JSON.stringify({ query }),
         });
+
+        console.log('Response received. Status:', response.status);
 
         const reader = response.body?.pipeThrough(new TextDecoderStream()).getReader();
 
@@ -41,7 +47,10 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
         const readChunks = async () => {
           while (shouldUpdate) {
             const { value, done } = await reader.read();
-            if (done) break;
+            if (done) {
+              console.log('Finished reading response');
+              break;
+            }
             chunks.push(value);
             result = chunks.join('');
 
@@ -51,10 +60,11 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
           }
         };
 
-        readChunks().catch(console.error);
+        readChunks().catch(error => console.error('Error reading chunks:', error));
 
         return () => {
           shouldUpdate = false;
+          console.log('Cleanup function called');
         };
       } catch (error) {
         console.error('Error fetching course content:', error);
@@ -65,6 +75,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
   }, [query]);
 
   const handlePageClick = (pageNumber: number) => {
+    console.log('Page clicked:', pageNumber);
     onChapterSelect(pageNumber);
   };
 
@@ -84,22 +95,33 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
     return pages;
   };
 
+  console.log('Rendering component. Markdown length:', markdown.length);
+
   return (
     <div className="main-container">
       <div className="markdown-container">
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </div>
       <div className="navigation-buttons">
-        <button className="submit-button" onClick={onPrev} disabled={currentChapter === 0}>
+        <button className="submit-button" onClick={() => {
+          console.log('Prev button clicked');
+          onPrev();
+        }} disabled={currentChapter === 0}>
           Prev
         </button>
         <div className="pagination-container">{renderPagination()}</div>
         {isLastChapter ? (
-          <button className="start-course-button" onClick={onComplete}>
+          <button className="start-course-button" onClick={() => {
+            console.log('Mark as Complete button clicked');
+            onComplete();
+          }}>
             Mark as Complete
           </button>
         ) : (
-          <button className="submit-button" onClick={onNext}>
+          <button className="submit-button" onClick={() => {
+            console.log('Next button is clicked');
+            onNext();
+          }}>
             Next
           </button>
         )}
