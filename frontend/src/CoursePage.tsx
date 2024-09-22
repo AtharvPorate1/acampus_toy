@@ -119,7 +119,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ chapters, currentChapter, onPre
           </button>
         ) : (
           <button className="submit-button" onClick={() => {
-            console.log('Next button is clicked');
+            console.log('On Client: Next button is clicked');
             onNext();
           }}>
             Next
